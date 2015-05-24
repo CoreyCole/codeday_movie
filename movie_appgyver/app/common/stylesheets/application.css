@@ -88,3 +88,34 @@ body {
 	padding-top: 50px;
 	padding-bottom: 40px;
 }
+
+#movie {
+    background-color: white;
+    text-align: center;
+    color: black;
+}
+
+/* Movie */
+
+#movie #main {
+    text-align: left;
+}
+
+#photoD {
+    background-color: lightgray;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+#photoD img, #photoD h2, #photoD p{
+    float: left;
+}
+
+#photoD img {
+    margin-right: 10px;
+}
+
+#movie h1 {
+    background-color: black;
+    color: white;
+}
