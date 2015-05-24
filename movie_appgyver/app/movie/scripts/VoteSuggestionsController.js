@@ -16,6 +16,7 @@ angular
 
 		for (var i = 0; i < movie_data.length; i++) {
 			var score = parseInt(movie_data[i]["score"]);
+			movie_data[i]["trimmedRating"] = movie_data[i]["rating"].split(" ")[0];
 			if (score > 50) {
 				movie_data[i]["iconImageLink"] = "http://www.rottentomatoes.com/static/images/icons/fresh-16.png";
 			} else {
@@ -37,13 +38,9 @@ angular
 	};
 
 	$scope.showMovie = function(index) {
-		var boxes = document.querySelectorAll(".checkz");
-		for (var i = 0; i < boxes.length; i++) {
-			if (boxes[i].checked) {
-				$scope.votes.movies.push(boxes[i].checkboxValue);
-			}
-		}
-		$scope.test = $scope.votes.movies;
+		window.localStorage.setItem("currentMovie", JSON.stringify($scope.movies[index]));
+		var movieView = new supersonic.ui.View("movie#movie");
+		supersonic.ui.modal.show(movieView);
 	};
 
 	$scope.deleteMovie = function(index) {

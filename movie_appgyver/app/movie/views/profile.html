@@ -1,4 +1,4 @@
-<div id="addViewers" ng-controller="AddViewersController">
+<div id="profile" ng-controller="ProfileController">
   <super-navbar>
     <super-navbar-title>
       Profile
@@ -7,10 +7,45 @@
 
   <div id="profile_content">
     <div id="favorite_movies">
-      <h1>Favorite Movies</h1>
+      <h1>
+        Favorite Movies
+        <button class="button button-balanced delete-suggestion" ng-click="addMovie()">
+          <i class="fa fa-plus-circle"></i>
+        </button>
+      </h1>
+      <div class="list">
+        <div class="item" ng-repeat="movie in movies">
+          <h1 id="sugTitle">{{movie.name}} <span class="year">{{movie.year}}</span></h1>
+          <img class="poster_thumbnail" ng-src="{{movie.imageLink}}" ng-click="showMovie($index)" />
+          <div class="movie_data">
+            <span class="lefty" id="score">{{movie.score}}%</span>
+            <img class="lefty"ng-src="{{movie.iconImageLink}}" /><br />
+            <p class="lefty">{{movie.length}}</p><br /><br />
+            <p class="lefty">{{movie.trimmedRating}}</p>
+          </div>
+          <button class="button button-assertive delete-suggestion" ng-click="deleteMovie($index)">
+            <i class="fa fa-minus-circle"></i>
+          </button>
+        </div>
+      </div>
     </div>
     <div id="favorite_actors">
-      <h1>Favorite Actors</h1>
+      <h1>
+        Favorite Actors
+        <button class="button button-balanced delete-suggestion" ng-click="addeActor()">
+          <i class="fa fa-plus-circle"></i>
+        </button>
+      </h1>
+      <ul class="list">
+        <li ng-repeat="actor in actors" class="item">
+          <i class="icon super-person-stalker">
+            {{actor}}
+          </i>
+          <button class="button button-assertive delete-suggestion" ng-click="deleteActor($index)">
+            <i class="fa fa-minus-circle"></i>
+          </button>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

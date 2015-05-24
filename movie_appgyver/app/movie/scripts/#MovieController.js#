@@ -1,6 +1,0 @@
-angular
-    .module('movie')
-    .controller('MovieController', function($scope, supersonic) {
-	$scope.test = "test";
-
-    });

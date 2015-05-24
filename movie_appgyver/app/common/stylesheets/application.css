@@ -96,13 +96,11 @@ body {
 
 
 /* Movie */
-
 #movie #main {
     text-align: left;
 }
 
 #photoD {
-    background-color: lightgray;
     overflow: hidden;
     vertical-align: top;
 }
@@ -115,9 +113,36 @@ body {
     margin-right: 10px;
 }
 
-#movie h1 {
+#image {
+	width: 50%;
+	width: 50%;
+}
+
+#desc {
+	color: black;
+}
+
+#top-bar {
     background-color: black;
-    color: white;
+    text-align: center;
+    overflow: hidden;
+    margin: auto;
+}
+
+#title {
+	background-color: white;
+	color: black;
+	text-align: center;
+}
+
+#score {
+	font-weight: bold;
+	font-size: 26pt;
+}
+
+.exitModal {
+	float: right;
+}
 
 /* SUGGESTIONS */
 .poster_thumbnail {
@@ -126,15 +151,33 @@ body {
 	float: left;
 }
 
+#sugTitle {
+	font-size: 20pt;
+}
+
 .movie_data {
 	float: left;
 	padding-left: 10px;
+	color: black;
+	padding-top: 10px;
 }
 
 .year {
-	font-size: 10pt;
+	font-size: 14pt;
+}
+
+.lefty {
+	float: left;
 }
 
 .delete-suggestion {
 	float: right;
+}
+
+.dimmy {
+	background-color: white;
+}
+
+#profile_content .button-balanced {
+	margin: 20px;
 }

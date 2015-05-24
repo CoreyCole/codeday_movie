@@ -23,7 +23,7 @@ module.exports =
 
   rootView:
 
-    location: "movie#movie"
+    location: "movie#login"
 
   preloads: [
     {

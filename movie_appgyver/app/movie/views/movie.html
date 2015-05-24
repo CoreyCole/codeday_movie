@@ -1,19 +1,43 @@
  <div id="movie" ng-controller="MovieController">
-    <h1 >{{name}}: {{rating}}</h1>
+    <h1 id="top-bar">
+    	<button class="button button-assertive exitModal" ng-click="closeModal()">
+    		<i class="fa fa-times"></i>
+   		</button>
+   	</h1>
+    <h1 id="title">{{movie.name}} <span class="year">{{movie.year}}</span></h1>
     <div id="main">
-      <div id="photoD">
-	<img ng-src="{{imageLink}}" alt="Main Picture" height="180px" width="40%" id="image">
-	<h2>Description: </h2>
-	<p>
-	  {{description}}
-	</p>
+      <div id="photoD" class="card">
+	  	<img ng-src="{{movie.imageLink}}" alt="Main Picture" id="image">
+		<div class="movie_data">
+			<span class="lefty" id="score">{{movie.score}}%</span>
+		    <img class="lefty"ng-src="{{movie.iconImageLink}}" /><br />
+		    <p class="lefty">{{movie.length}}</p><br /><br />
+		    <p class="lefty">{{movie.trimmedRating}}</p>
+		</div>
       </div>
-        <div>
+
+      <div class="card">
+      	<p id="desc">
+		  {{movie.description}}
+		</p>
+	</div>
+
+
+    <div>
+   	  <li class="item">Rotten Tomatoes Rating: 
+	    <ul class="list">
+	      <li class="item">
+	      	<span id="score">{{movie.score}}%</span>
+		  	<img ng-src="{{movie.iconImageLink}}" />
+	      </li>
+	    </ul>
+	  </li>
+
 	  <li class="item">Year: 
 	    <ul class="list">
 	      <li class="item">
 		<i class="fa fa-calendar-o"></i>
-		  {{year}}
+		  {{movie.year}}
 	      </li>
 	    </ul>
 	  </li>
@@ -22,7 +46,17 @@
 	    <ul class="list">
 	      <li class="item">
 		<i class="fa fa-clock-o">
-		  {{length}}
+		  {{movie.length}}
+		</i>
+	      </li>
+	    </ul>
+	  </li>
+
+	  <li class="item">Rating: 
+	    <ul class="list">
+	      <li class="item item-text-wrap">
+		<i class="fa fa-check-square-o"></i>
+		  {{movie.rating}}
 		</i>
 	      </li>
 	    </ul>
@@ -31,7 +65,7 @@
 	  <li class="item">
 	    Cast:
 	    <ul class="list">
-	      <li ng-repeat="actor in cast" class="item">
+	      <li ng-repeat="actor in movie.cast" class="item">
 		<i class="icon super-person-stalker">
 		  {{actor}}
 		</i>
@@ -41,7 +75,7 @@
 	  
 	  <li class="item">Genres: 
 	    <ul class="list">
-	      <li ng-repeat="genre in genres" class="item">
+	      <li ng-repeat="genre in movie.genres" class="item">
 		<i class="fa fa-folder-open-o">
 		  {{genre}}
 		</i>

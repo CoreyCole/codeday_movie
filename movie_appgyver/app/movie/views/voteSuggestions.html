@@ -7,15 +7,16 @@
 	      Vote
 	    </super-navbar-button>
 	</super-navbar>
-	<h1>{{test}}</h1>
 
 	<div class="list">
 		<div class="item" ng-repeat="movie in movies">
+			<h1 id="sugTitle">{{movie.name}} <span class="year">{{movie.year}}</span></h1>
 		    <img class="poster_thumbnail" ng-src="{{movie.imageLink}}" ng-click="showMovie($index)">
 		    <div class="movie_data">
-				<h2>{{movie.name}} <span class="year">{{movie.year}}</span></h2>
-				<h1>{{movie.score}}%</h1>
-			    <img ng-src="{{movie.iconImageLink}}" />
+				<span class="lefty" id="score">{{movie.score}}%</span>
+			    <img class="lefty"ng-src="{{movie.iconImageLink}}" /><br />
+			    <p class="lefty">{{movie.length}}</p><br /><br />
+			    <p class="lefty">{{movie.trimmedRating}}</p>
 		    </div>
 		    <button class="button button-assertive delete-suggestion" ng-click="deleteMovie($index)">
 				<i class="fa fa-minus-circle"></i>
