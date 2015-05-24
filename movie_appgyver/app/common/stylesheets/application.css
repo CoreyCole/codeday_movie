@@ -3,9 +3,14 @@ html {
 }
 
 body {
-	background-color: #333333;
+	background-color: #ffffff;
 	color: white;
 }
+
+.super-loading-c {
+	color: black;
+}
+
 .toggle.toggle-assertive input:checked + .track{
 	border-color: #E86423;
 	background-color: #E86423;
@@ -89,11 +94,6 @@ body {
 	padding-bottom: 40px;
 }
 
-#movie {
-    background-color: white;
-    text-align: center;
-    color: black;
-}
 
 /* Movie */
 
@@ -118,4 +118,23 @@ body {
 #movie h1 {
     background-color: black;
     color: white;
+
+/* SUGGESTIONS */
+.poster_thumbnail {
+	width: 25%;
+	height: 25%;
+	float: left;
+}
+
+.movie_data {
+	float: left;
+	padding-left: 10px;
+}
+
+.year {
+	font-size: 10pt;
+}
+
+.checkbox {
+	float: right;
 }

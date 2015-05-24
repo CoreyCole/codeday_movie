@@ -1,6 +1,7 @@
 angular
     .module('movie')
     .controller('MovieController', function($scope, supersonic) {
+
 	var attributes = {
 	    name: 'TMNT',
 	    year: '2007',
@@ -22,6 +23,7 @@ angular
 	$scope.genres=attributes["genres"];
 	$scope.length=attributes["length"];
 	$scope.cast=attributes["cast"];
+
 
 	
     });
