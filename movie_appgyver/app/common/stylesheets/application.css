@@ -119,7 +119,8 @@ body {
 }
 
 #desc {
-	color: black;
+    color: black;
+    padding: 5px;
 }
 
 #top-bar {
@@ -170,7 +171,7 @@ body {
 	float: left;
 }
 
-.delete-suggestion {
+.delete-suggestion, .add-suggestion {
 	float: right;
 }
 
@@ -179,5 +180,27 @@ body {
 }
 
 #profile_content .button-balanced {
-	margin: 20px;
+	margin: 15px;
+}
+
+.mainTitle {
+    display: inline;
+}
+
+.mainTitle h1{
+    font-size: 22pt;
+    margin-left: 10px;
+    padding-top: 10px;
+    float: left;
+    margin-right: none;
+    padding-right: none;
+    text-decoration: underline;
+}
+
+.mainTitle button {
+    margin-top: none;
+    padding-top: none;
+    padding-left: none;
+    margin-left: none;
+    float: right;
 }

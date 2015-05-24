@@ -1,0 +1,29 @@
+
+<div class="list" ng-controller="SearchMovieController">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Movie Name">
+    </label>
+    <button class="button button-small" ng-onclick="displayMovies($movie)">
+      Submit
+    </button>
+    <button class="button button-assertive exitModal" ng-click="closeModal()">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+
+  <div ng-show="movies.length > 0">
+     <li class="item">
+	    Movies:
+	    <ul class="list">
+	      <li ng-repeat="movie in movies" class="item">
+		<i class="icon super-person-stalker">
+		  {{movie}}
+		</i>
+	      </li>
+	    </ul>
+	  </li>
+  </div>
+
+</div>
