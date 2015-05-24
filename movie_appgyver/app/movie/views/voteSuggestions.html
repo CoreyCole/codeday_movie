@@ -1,0 +1,39 @@
+<div id="voteSuggestions" ng-controller="VoteSuggestionsController">
+	<super-navbar>
+		<super-navbar-title>
+	    	Movie Suggestions
+	    </super-navbar-title>
+	    <super-navbar-button side="right" ng-click="doneTapped()">
+	      Done
+	    </super-navbar-button>
+	</super-navbar>
+	<h1>{{test}}</h1>
+
+	<div class="list">
+		<div class="item" ng-repeat="movie in movies">
+		    <img class="poster_thumbnail" ng-src="{{movie.imageLink}}" ng-click="showMovie($index)">
+		    <div class="movie_data">
+				<h2>{{movie.name}} <span class="year">{{movie.year}}</span></h2>
+				<h1>{{movie.score}}%</h1>
+			    <img ng-src="{{movie.iconImageLink}}" />
+		    </div>
+		    <div class="checkbox">
+		    	<input type="checkbox" checklist-model="votes.voted" checklist-value="movie">
+		    </div>
+    	</div>
+	</div>
+
+<!-- 	<div class="item item-divider" ng-click="showMovie($index)" ng-repeat="movie in movies">
+		
+		{{movie.name}}
+		{{movie.year}}
+		<img ng-source="{{movie.imageLink}}" alt="Movie Poster" />
+		{{movie.score}}
+		{{movie.description}}
+		{{movie.rating}}
+		{{movie.genres}}
+		{{movie.length}}
+		{{movie.cast}}
+		<input type="checkbox">
+	</div> -->
+</div>

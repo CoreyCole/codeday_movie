@@ -1,8 +1,11 @@
-<div id="finalSuggestion" ng-controller="FinalSuggestionController">
+<div id="waitingForViewers" ng-controller="WaitingForViewersController1">
 	<super-navbar>
 		<super-navbar-title>
-	    	Final Suggestion
+	    	Waiting for Viewers
 	    </super-navbar-title>
+	    <super-navbar-button side="right" ng-click="doneTapped()">
+	      Done
+	    </super-navbar-button>
 	</super-navbar>
 
 	<div id="dim-wrapper" class="text-center loader-center" ng-show="showDim">

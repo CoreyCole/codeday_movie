@@ -3,9 +3,14 @@ html {
 }
 
 body {
-	background-color: #333333;
+	background-color: #ffffff;
 	color: white;
 }
+
+.super-loading-c {
+	color: black;
+}
+
 .toggle.toggle-assertive input:checked + .track{
 	border-color: #E86423;
 	background-color: #E86423;
@@ -87,4 +92,24 @@ body {
 	text-align: center;
 	padding-top: 50px;
 	padding-bottom: 40px;
+}
+
+/* SUGGESTIONS */
+.poster_thumbnail {
+	width: 25%;
+	height: 25%;
+	float: left;
+}
+
+.movie_data {
+	float: left;
+	padding-left: 10px;
+}
+
+.year {
+	font-size: 10pt;
+}
+
+.checkbox {
+	float: right;
 }

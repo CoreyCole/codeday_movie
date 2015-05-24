@@ -22,16 +22,20 @@ module.exports =
   # ]
 
   rootView:
-    location: "movie#login"
+    location: "movie#waitingForViewers1"
 
   preloads: [
     {
-      id: "learn-more"
-      location: "example#learn-more"
+      id: "login"
+      location: "movie#login"
     }
     {
-      id: "using-the-scanner"
-      location: "example#using-the-scanner"
+      id: "addViewers"
+      location: "movie#addViwers"
+    }
+    {
+      id: "profile"
+      location: "movie#profile"
     }
   ]
 
