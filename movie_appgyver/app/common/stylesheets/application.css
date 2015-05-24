@@ -94,6 +94,31 @@ body {
 	padding-bottom: 40px;
 }
 
+
+/* Movie */
+
+#movie #main {
+    text-align: left;
+}
+
+#photoD {
+    background-color: lightgray;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+#photoD img, #photoD h2, #photoD p{
+    float: left;
+}
+
+#photoD img {
+    margin-right: 10px;
+}
+
+#movie h1 {
+    background-color: black;
+    color: white;
+
 /* SUGGESTIONS */
 .poster_thumbnail {
 	width: 25%;
@@ -110,6 +135,6 @@ body {
 	font-size: 10pt;
 }
 
-.checkbox {
+.delete-suggestion {
 	float: right;
 }

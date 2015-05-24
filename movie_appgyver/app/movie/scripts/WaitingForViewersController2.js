@@ -9,6 +9,7 @@ angular
 	$scope.init();
 
 	$scope.doneTapped = function() {
+		$scope.test = "test";
 		var suggestions = new supersonic.ui.View("movie#finalSuggestion");
 		supersonic.ui.layers.push(suggestions);
 	};
