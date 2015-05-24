@@ -22,7 +22,8 @@ module.exports =
   # ]
 
   rootView:
-    location: "movie#waitingForViewers1"
+
+    location: "movie#movie"
 
   preloads: [
     {

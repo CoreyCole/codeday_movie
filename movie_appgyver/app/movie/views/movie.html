@@ -1,0 +1,55 @@
+ <div id="movie" ng-controller="MovieController">
+    <h1 >{{name}}: {{rating}}</h1>
+    <div id="main">
+      <div id="photoD">
+	<img ng-src="{{imageLink}}" alt="Main Picture" height="180px" width="40%" id="image">
+	<h2>Description: </h2>
+	<p>
+	  {{description}}
+	</p>
+      </div>
+        <div>
+	  <li class="item">Year: 
+	    <ul class="list">
+	      <li class="item">
+		<i class="fa fa-calendar-o"></i>
+		  {{year}}
+	      </li>
+	    </ul>
+	  </li>
+
+	  <li class="item">Length: 
+	    <ul class="list">
+	      <li class="item">
+		<i class="fa fa-clock-o">
+		  {{length}}
+		</i>
+	      </li>
+	    </ul>
+	  </li>
+	  
+	  <li class="item">
+	    Cast:
+	    <ul class="list">
+	      <li ng-repeat="actor in cast" class="item">
+		<i class="icon super-person-stalker">
+		  {{actor}}
+		</i>
+	      </li>
+	    </ul>
+	  </li>
+	  
+	  <li class="item">Genres: 
+	    <ul class="list">
+	      <li ng-repeat="genre in genres" class="item">
+		<i class="fa fa-folder-open-o">
+		  {{genre}}
+		</i>
+	      </li>
+	    </ul>
+	  </li>
+	</ul>
+      </div>
+    </div>
+  </div>
+
