@@ -3,8 +3,8 @@
 		<super-navbar-title>
 	    	Movie Suggestions
 	    </super-navbar-title>
-	    <super-navbar-button side="right" ng-click="doneTapped()">
-	      Done
+	    <super-navbar-button side="right" ng-click="voteTapped()">
+	      Vote
 	    </super-navbar-button>
 	</super-navbar>
 	<h1>{{test}}</h1>
@@ -17,23 +17,9 @@
 				<h1>{{movie.score}}%</h1>
 			    <img ng-src="{{movie.iconImageLink}}" />
 		    </div>
-		    <div class="checkbox">
-		    	<input type="checkbox" checklist-model="votes.voted" checklist-value="movie">
-		    </div>
+		    <button class="button button-assertive delete-suggestion" ng-click="deleteMovie($index)">
+				<i class="fa fa-minus-circle"></i>
+			</button>
     	</div>
 	</div>
-
-<!-- 	<div class="item item-divider" ng-click="showMovie($index)" ng-repeat="movie in movies">
-		
-		{{movie.name}}
-		{{movie.year}}
-		<img ng-source="{{movie.imageLink}}" alt="Movie Poster" />
-		{{movie.score}}
-		{{movie.description}}
-		{{movie.rating}}
-		{{movie.genres}}
-		{{movie.length}}
-		{{movie.cast}}
-		<input type="checkbox">
-	</div> -->
 </div>

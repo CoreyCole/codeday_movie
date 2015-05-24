@@ -16,7 +16,6 @@ angular
 
 		for (var i = 0; i < movie_data.length; i++) {
 			var score = parseInt(movie_data[i]["score"]);
-			movie_data[i]["iconImageLink"] = "asdf"
 			if (score > 50) {
 				movie_data[i]["iconImageLink"] = "http://www.rottentomatoes.com/static/images/icons/fresh-16.png";
 			} else {
@@ -26,22 +25,28 @@ angular
 
 		$scope.movies = movie_data;
 		$scope.votes = {
-			voted: []
+			movies: []
 		};
 	};
 
 	$scope.init();
 
-	$scope.doneTapped = function() {
+	$scope.voteTapped = function() {
 		var waitingView = new supersonic.ui.View("movie#waitingForViewers2");
 		supersonic.ui.layers.push(waitingView);
 	};
 
 	$scope.showMovie = function(index) {
-		$scope.test = $scope.votes.voted;
+		var boxes = document.querySelectorAll(".checkz");
+		for (var i = 0; i < boxes.length; i++) {
+			if (boxes[i].checked) {
+				$scope.votes.movies.push(boxes[i].checkboxValue);
+			}
+		}
+		$scope.test = $scope.votes.movies;
 	};
 
-	$scope.votePlaced = function(index) {
-		$scope.test = $scope.vote[index];
+	$scope.deleteMovie = function(index) {
+		$scope.movies.splice(index,1);
 	};
   });
