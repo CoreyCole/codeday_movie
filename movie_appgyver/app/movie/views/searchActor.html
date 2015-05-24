@@ -1,0 +1,29 @@
+
+<div class="list" ng-controller="SearchActorController">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Actor Name">
+    </label>
+    <button class="button button-small" ng-onclick="displayActors($actor)">
+      Submit
+    </button>
+    <button class="button button-assertive exitModal" ng-click="closeModal()">
+      <i class="fa fa-times"></i>
+    </button>
+  </div>
+
+  <div ng-show="actors.length > 0">
+     <li class="item">
+	    Actors:
+	    <ul class="list">
+	      <li ng-repeat="actor in actors" class="item">
+		<i class="icon super-person-stalker">
+		  {{actor}}
+		</i>
+	      </li>
+	    </ul>
+	  </li>
+  </div>
+
+</div>

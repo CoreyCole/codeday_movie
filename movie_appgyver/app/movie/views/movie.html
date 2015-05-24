@@ -1,89 +1,89 @@
- <div id="movie" ng-controller="MovieController">
-    <h1 id="top-bar">
-    	<button class="button button-assertive exitModal" ng-click="closeModal()">
-    		<i class="fa fa-times"></i>
-   		</button>
-   	</h1>
-    <h1 id="title">{{movie.name}} <span class="year">{{movie.year}}</span></h1>
-    <div id="main">
-      <div id="photoD" class="card">
-	  	<img ng-src="{{movie.imageLink}}" alt="Main Picture" id="image">
-		<div class="movie_data">
-			<span class="lefty" id="score">{{movie.score}}%</span>
-		    <img class="lefty"ng-src="{{movie.iconImageLink}}" /><br />
-		    <p class="lefty">{{movie.length}}</p><br /><br />
-		    <p class="lefty">{{movie.trimmedRating}}</p>
-		</div>
+<div id="movie" ng-controller="MovieController">
+  <h1 id="top-bar">
+    <button class="button button-assertive exitModal" ng-click="closeModal()">
+      <i class="fa fa-times"></i>
+    </button>
+  </h1>
+  <h1 id="title">{{movie.name}} <span class="year">{{movie.year}}</span></h1>
+  <div id="main">
+    <div id="photoD" class="card">
+      <img ng-src="{{movie.imageLink}}" alt="Main Picture" id="image">
+      <div class="movie_data">
+	<span class="lefty" id="score">{{movie.score}}%</span>
+	<img class="lefty"ng-src="{{movie.iconImageLink}}" /><br />
+	<p class="lefty">{{movie.length}}</p><br /><br />
+	<p class="lefty">{{movie.trimmedRating}}</p>
       </div>
+    </div>
 
-      <div class="card">
-      	<p id="desc">
-		  {{movie.description}}
-		</p>
-	</div>
+    <div class="card">
+      <p id="desc">
+	{{movie.description}}
+      </p>
+    </div>
 
 
     <div>
-   	  <li class="item">Rotten Tomatoes Rating: 
-	    <ul class="list">
-	      <li class="item">
-	      	<span id="score">{{movie.score}}%</span>
-		  	<img ng-src="{{movie.iconImageLink}}" />
-	      </li>
-	    </ul>
-	  </li>
+      <ul>
+	<li class="item">Rotten Tomatoes Rating: 
+	  <ul class="list">
+	    <li class="item">
+	      <span id="score">{{movie.score}}%</span>
+	      <img ng-src="{{movie.iconImageLink}}" />
+	    </li>
+	  </ul>
+	</li>
 
-	  <li class="item">Year: 
-	    <ul class="list">
-	      <li class="item">
-		<i class="fa fa-calendar-o"></i>
-		  {{movie.year}}
-	      </li>
-	    </ul>
-	  </li>
+	<li class="item">Year: 
+	  <ul class="list">
+	    <li class="item">
+	      <i class="fa fa-calendar-o"></i>
+	      {{movie.year}}
+	    </li>
+	  </ul>
+	</li>
 
-	  <li class="item">Length: 
-	    <ul class="list">
-	      <li class="item">
-		<i class="fa fa-clock-o">
-		  {{movie.length}}
-		</i>
-	      </li>
-	    </ul>
-	  </li>
+	<li class="item">Length: 
+	  <ul class="list">
+	    <li class="item">
+	      <i class="fa fa-clock-o">
+		{{movie.length}}
+	      </i>
+	    </li>
+	  </ul>
+	</li>
 
-	  <li class="item">Rating: 
-	    <ul class="list">
-	      <li class="item item-text-wrap">
-		<i class="fa fa-check-square-o"></i>
-		  {{movie.rating}}
-		</i>
-	      </li>
-	    </ul>
-	  </li>
-	  
-	  <li class="item">
-	    Cast:
-	    <ul class="list">
-	      <li ng-repeat="actor in movie.cast" class="item">
-		<i class="icon super-person-stalker">
-		  {{actor}}
-		</i>
-	      </li>
-	    </ul>
-	  </li>
-	  
-	  <li class="item">Genres: 
-	    <ul class="list">
-	      <li ng-repeat="genre in movie.genres" class="item">
-		<i class="fa fa-folder-open-o">
-		  {{genre}}
-		</i>
-	      </li>
-	    </ul>
-	  </li>
-	</ul>
-      </div>
+	<li class="item">Rating: 
+	  <ul class="list">
+	    <li class="item item-text-wrap">
+	      <i class="fa fa-check-square-o"></i>
+	      {{movie.rating}}
+	    </li>
+	  </ul>
+	</li>
+
+	<li class="item">
+	  Cast:
+	  <ul class="list">
+	    <li ng-repeat="actor in movie.cast" class="item">
+	      <i class="icon super-person-stalker">
+		{{actor}}
+	      </i>
+	    </li>
+	  </ul>
+	</li>
+
+	<li class="item">Genres: 
+	  <ul class="list">
+	    <li ng-repeat="genre in movie.genres" class="item">
+	      <i class="fa fa-folder-open-o">
+		{{genre}}
+	      </i>
+	    </li>
+	  </ul>
+	</li>
+      </ul>
     </div>
   </div>
+</div>
 

@@ -1,6 +1,6 @@
 angular
   .module('movie')
-  .controller('LoginController', function($scope, $http, supersonic) {
+  .controller('LoginController', ['$scope', '$http', 'supersonic', function($scope, $http, supersonic) {
 
 	$scope.init = function() {
 		$scope.showDim = false;
@@ -9,10 +9,10 @@ angular
 	$scope.init();
 
 	$scope.submitForm = function(isValid) {
-		$scope.showDim = true
+		$scope.showDim = true;
 		var email = "";
 		if ($scope.rememberMe) {
-			email = localStore.setItem('email', email);
+			email = window.localStore.setItem('email', email);
 		} else {
 			email = "";
 		}
@@ -21,6 +21,7 @@ angular
 		} else {
 			$scope.postToServer();
 		}
+
 		// var parameters = new supersonic.ui.View("movie#movieParameters");
 		// supersonic.ui.layers.push(parameters);
 	};
@@ -46,48 +47,39 @@ angular
 		      email: $scope.user.email,
 		      password: $scope.user.password
 		    }
-		  },
-		  timeout: 15000
-		}).success(function(data) {
+		  }
+		}).
+		success(function(data) {
 		  $scope.showDim = false;
 		  if (data.errors) {
 		    $scope.messages = data.errors._full_messages;
 		    supersonic.logger.log(data.errors._full_messages);
 		  } else {
 		    $scope.user.password = '';
-		    return;
+		    window.localStorage.setItem("token", data.authentication_token);
+			window.localStorage.setItem("currentUser", data.user);
+			var parameters = new supersonic.ui.View("movie#movieParameters");
+			supersonic.ui.layers.push(parameters);
 		  }
-		}).error(function(error) {
+		}).
+		error(function(error) {
 		  $scope.showDim = false;
 		  if (error && error.errors && error.errors._full_message) {
 		    $scope.message = error.errors._full_message;
 		  } else {
 		    $scope.message = 'Error connecting to server. Check settings and try again.';
 		  }
-		  results = [];
-		  for (key in error) {
-		    if (typeof error[key] !== 'object') {
-		      results.push(supersonic.logger.log(key + ' : ' + error[key]));
-		    } else {
-		      results.push((function() {
-		        var results1;
-		        results1 = [];
-		        for (subkey in error[key]) {
-		          results1.push(supersonic.logger.log(subkey + ' : ' + error[key][subkey]));
-		        }
-		        return results1;
-		      })());
-		    }
-		  }
-		  return results;
 		});
 
-		// $http.post('http://media-tor.herokuapp.com/token',
-		// 	[
+		// $http.post('https://media-tor.herokuapp.com/token',
+		// 	{
 		// 		email: $scope.user.email,
 		// 		password: $scope.user.password
-		// 	]
-		// ).success(successCallback);
+		// 	}
+		// ).success(function() {
+		// 	$scope.message = "hey";
+		// });
+		// $scope.message = "hey2";
 		// success(function(data) {
 		// 	$scope.showDim = false;
 		// 	return
@@ -96,4 +88,4 @@ angular
 		// 	$scope.message = 'Error connecting to server. Check settings and try again.';
 		// });
 	};
-  });
+  }]);

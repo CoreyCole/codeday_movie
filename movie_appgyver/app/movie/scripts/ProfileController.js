@@ -14,29 +14,48 @@ angular
 			{"rating": "G", "genres": ["Drama", "Kids & Family"], "description": " The 1993 remake of The Secret Garden is a rendition of the classic Frances Hodgon Burnett novel about a young girl (Kate Maberly) who discovers an abandoned garden on her uncle's large Victorian country estate, as well as an invalid cousin she didn't realize she had. With the help of a local boy, the girl sets out to restore the garden and, once it is blooming again, she discovers it has magical powers. ... Read more on rottentomatoes.com", "length": " 1 hr. 43 min.", "cast": [" Kate Maberly", " Maggie Smith", " Heydon Prowse", " Andrew Knott", " Laura Crossley", " John Lynch", " Walter Sparrow", " Ir\u00e8ne Jacob", " Karen Lindsay-Stewar...", " Frank Baker", " Arthur Spreckley", " Colin Bruce", " David Stoll"], "imageLink": "http://resizing.flixster.com/gTzdiyNoHr7AaIhyHdfkatvlZCY=/177x270/dkpu1ddg7pbsk.cloudfront.net/movie/11/15/28/11152871_ori.jpg", "score": "85", "year": " (1993)", "name": " The Secret Garden"}
 		];
 
-		for (var i = 0; i < movie_data.length; i++) {
-			var score = parseInt(movie_data[i]["score"]);
-			movie_data[i]["trimmedRating"] = movie_data[i]["rating"].split(" ")[0];
-			if (score > 50) {
-				movie_data[i]["iconImageLink"] = "http://www.rottentomatoes.com/static/images/icons/fresh-16.png";
-			} else {
-				movie_data[i]["iconImageLink"] = "http://www.rottentomatoes.com/static/images/icons/splat-16.png";
-			}
+	    for (var i = 0; i < movie_data.length; i++) {
+		var score = parseInt(movie_data[i]["score"]);
+		movie_data[i]["trimmedRating"] = movie_data[i]["rating"].split(" ")[0];
+		if (score > 50) {
+		    movie_data[i]["iconImageLink"] = "http://www.rottentomatoes.com/static/images/icons/fresh-16.png";
+		} else {
+		    movie_data[i]["iconImageLink"] = "http://www.rottentomatoes.com/static/images/icons/splat-16.png";
 		}
-		$scope.test = "asdf";
-		$scope.movies = movie_data;
-		$scope.actors = [
-			"Arnold Schwarzenegger",
-			"Gerard Butler",
-			"Jessica Biel",
-			"Ray Romano"
-		];
+	    }
+	    $scope.test = "asdf";
+	    $scope.movies = movie_data;
+	    $scope.actors = [
+		"Arnold Schwarzenegger",
+		"Gerard Butler",
+		"Jessica Biel",
+		"Ray Romano"
+	    ];
 	};
 
-	$scope.init();
+      $scope.init();
 
-	$scope.viewersTapped = function() {
-		var viewersView = new supersonic.ui.View("movie#addViewers");
-		supersonic.ui.layers.push(viewersView);
-	};
+      $scope.viewersTapped = function() {
+	  var viewersView = new supersonic.ui.View("movie#addViewers");
+	  supersonic.ui.layers.push(viewersView);
+      };
+
+      $scope.deleteActor = function(index) {
+	  $scope.actors.splice(index,1);
+      };
+
+      $scope.deleteMovie = function(index) {
+	  $scope.movies.splice(index,1);
+      };
+
+      $scope.addMovie = function() {
+	  var searchMovie = new supersonic.ui.View("movie#searchMovie");
+	  supersonic.ui.modal.show(searchMovie);
+      };
+
+      $scope.addActor = function() {
+	  var searchActor = new supersonic.ui.View("movie#searchActor");
+	  supersonic.ui.modal.show(searchActor);
+      };
+      
   });
