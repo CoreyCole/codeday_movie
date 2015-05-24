@@ -10,7 +10,9 @@ class TokenController < BaseController
     @user = User.new
 
     if !params_present?
-      @user.errors.add(:email, 'not present') if !params[:user][:email]
+      if !params[:user][:email]
+        @user.errors.add(:email, 'not present')
+      end
       @user.errors.add(:password, 'not present') if !params[:user][:password]
     end
 
@@ -27,10 +29,10 @@ class TokenController < BaseController
     end
 
     if @user.errors.any?
-      render :show,
+      render "/",
              :status => 422
     else
-      render :show
+      redirect_to(@user)
     end
   end
   
@@ -38,7 +40,7 @@ class TokenController < BaseController
 
   def params_present?
     user = params[:user]
-    user and user.is_a?(HashWithIndifferentAccess) and user[:email] and user[:password]
+    user and user[:email] and user[:password]
   end
 
 end
